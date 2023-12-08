@@ -9,14 +9,12 @@
 
 defined('_JEXEC') or die;
 
-jimport('joomla.plugin.plugin');
+namespace Joomla\Plugin\Content\Rinmeta\Extension;
 
-/**
- * Class PlgContentTweetcards
- *
- * @since  0.0.1
- */
-class PlgContentTweetcards extends JPlugin
+use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\CMS\Plugin\PluginHelper;
+
+final class Rinmeta extends CMSPlugin
 {
     /**
      * Event method onContentBeforeDisplay
@@ -25,15 +23,12 @@ class PlgContentTweetcards extends JPlugin
      * @param   mixed   &$row     An object with a "text" property
      * @param   mixed   &$params  Additional parameters
      * @param   int     $page     Optional page number
-     *
      * @return  null
-     *
-     * @since 0.0.1
      */
     public function onContentBeforeDisplay($context, &$row, &$params, $page = 0)
     {
 
-        $twitteraccount     = $this->params->get('twitteraccount', '@htmgarcia');
+        $twitteraccount     = $this->params->get('twitteraccount', '');
         $type               = $this->params->get('type', 'summary');
 
         if ($context == 'com_content.article') {
@@ -61,10 +56,7 @@ class PlgContentTweetcards extends JPlugin
 
     /**
      * Event method that create the open graph meta tags
-     *
      * @param   string  $title  The article's title
-     *
-     * @since 0.0.1
      */
     protected function setMetadata ($title, $image, $metadesc, $twitteraccount, $type) {
         $doc = JFactory::getDocument();
@@ -77,10 +69,7 @@ class PlgContentTweetcards extends JPlugin
 
     /**
      * Extract article's image
-     *
      * @return string
-     *
-     * @since 0.0.1
      */
     protected function setImage($images, $text) {
         $fullImage = json_decode($images);
@@ -97,30 +86,10 @@ class PlgContentTweetcards extends JPlugin
 
         return $image;
     }
-
-    /**
-     * Extract article's meta description
-     *
-     * @return string
-     *
-     * @since 0.0.1
-     */
-    protected function setMetadesc($metadesc, $text) {
-        if($metadesc) {
-            $metadesc = $metadesc;
-        } else {
-            $metadesc = substr( strip_tags($text), 0, 157 ) . '...';
-        }
-
-        return $metadesc;
-    }
-
+    
     /**
      * Extract article's meta title
-     *
      * @return string
-     *
-     * @since 0.0.1
      */
     protected function setMetatitle($metadata, $title) {
         $metadata = json_decode($metadata);
@@ -131,5 +100,19 @@ class PlgContentTweetcards extends JPlugin
         }
 
         return $metatitle;
+    }
+    
+    /**
+     * Extract article's meta description
+     * @return string
+     */
+    protected function setMetadesc($metadesc, $text) {
+        if($metadesc) {
+            $metadesc = $metadesc;
+        } else {
+            $metadesc = substr( strip_tags($text), 0, 157 ) . '...';
+        }
+
+        return $metadesc;
     }
 }
