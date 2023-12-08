@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" version="5.0" group="content" method="upgrade">
-    <name>plg_content_rinmeta</name>
+    <name>RinMeta</name>
     <author>Rinenweb</author>
     <creationDate>2023-12-08</creationDate>
     <license>GNU GPL v3</license>
