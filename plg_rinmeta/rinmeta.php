@@ -7,10 +7,11 @@
  * @link       https://github.com/rinenweb/plg_content_rinmeta
  */
 
-defined('_JEXEC') or die;
-
 use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\CMS\Factory;
 use Joomla\CMS\Uri\Uri;
+
+defined('_JEXEC') or die;
 
 class PlgContentRinmeta extends CMSPlugin
 {
@@ -41,7 +42,7 @@ class PlgContentRinmeta extends CMSPlugin
                 $this->setMetatitle($row->metadata, $row->title),
                 $this->setImage($row->images, $row->text),
                 $this->setMetadesc($row->metadesc, $row->text),
-                JUri::current()
+                Uri::current()
             );
         }
     }
@@ -51,7 +52,7 @@ class PlgContentRinmeta extends CMSPlugin
      */
     protected function setTwitterMetadata($title, $image, $metadesc, $twitterAccount, $type)
     {
-        $doc = JFactory::getDocument();
+        $doc = Factory::getDocument();
         $doc->setMetaData('twitter:card', $type);
         $doc->setMetaData('twitter:site', $twitterAccount);
         $doc->setMetaData('twitter:title', $title);
@@ -64,8 +65,8 @@ class PlgContentRinmeta extends CMSPlugin
      */
     protected function setOpenGraphMetadata($title, $image, $metadesc, $url)
     {
-        $doc = JFactory::getDocument();
-        $config = JFactory::getConfig();
+        $doc = Factory::getDocument();
+        $config = Factory::getConfig();
     
         $doc->setMetaData('og:title', $title);
         $doc->setMetaData('og:description', $metadesc);
