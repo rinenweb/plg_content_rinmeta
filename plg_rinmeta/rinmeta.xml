@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" version="5.0" group="content" method="upgrade">
-    <name>RinMeta</name>
+<extension type="plugin" version="4.0" group="content" method="upgrade">
+    <name>Content - RinMeta</name>
     <author>Rinenweb</author>
-    <creationDate>2023-12-08</creationDate>
+    <creationDate>2023-12-11</creationDate>
     <license>GNU GPL v3</license>
     <authorEmail>info@rinenweb.eu</authorEmail>
     <authorUrl>https://www.rinenweb.eu</authorUrl>
@@ -38,7 +38,7 @@
                     <option value="summary">PLG_RINMETA_SUMMARY_CARD</option>
                     <option value="summary_large_image">PLG_RINMETA_SUMMARY_CARD_LARGE_IMAGE</option>
                 </field>
-
+                <field name="facebookappid" type="text" label="PLG_RINMETA_APPID_LABEL" description="PLG_RINMETA_APPID_LABEL_DESC" size="10" />
             </fieldset>
         </fields>
     </config>
