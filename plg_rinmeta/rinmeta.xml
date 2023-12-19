@@ -25,7 +25,7 @@
                 <field
                         name="twitteraccount"
                         type="text"
-                        default="@rinenweb"
+                        default=""
                         label="PLG_RINMETA_ACCOUNT_LABEL"
                         description="PLG_RINMETA_ACCOUNT_DESC"
                         size="10" />
