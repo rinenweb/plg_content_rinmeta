@@ -20,7 +20,8 @@ ADALinker Plugin is fairly simple and will (hopefully) play nice with:
 Once installed and enabled, RinMeta Plugin works seamlessly in the background. Simply create or update your articles as usual, and RinMeta will automatically generate the necessary Twitter and Open Graph meta tags. Share your articles on social media, and enjoy an optimized presentation with engaging titles, descriptions and images.
 
 # Screenshot
-![RinMeta Joomla Plugin](https://github.com/rinenweb/plg_content_rinmeta/assets/17462686/206d90dd-e6f3-4b85-9245-fefc378c5e86)
+![RinMeta Joomla Plugin](https://github.com/rinenweb/plg_content_rinmeta/assets/17462686/0c07261a-37b4-45bf-90c2-8b40d89744b3)
+
 
 
 # Settings
