@@ -3,7 +3,7 @@
 	<update>
 		<name>Content - RinMeta</name>
 		<description>A Joomla plugin that adds Open Graph and Twitter tags to your content</description>
-		<element>plg_rinmeta</element>
+		<element>rinmeta</element>
 		<type>plugin</type>
 		<version>1.0</version>
 		<client>administrator</client>
@@ -11,6 +11,7 @@
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/rinenweb/plg_content_rinmeta/releases/download/v1.0/plg_rinmeta.zip</downloadurl>
 		</downloads>
-		<targetplatform name="joomla" version="(4\.[01234]|5\.0)" />
+		<targetplatform name="joomla" version="(4\.[01234]|5\.[01234567])" />
+		<php_minimum>7.2</php_minimum>
 	</update>
 </updates>
